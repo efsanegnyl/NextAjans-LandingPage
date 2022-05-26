@@ -1,89 +1,165 @@
-*{
-    margin:0;
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
-html,body{
-height: 100%;
-  
+
+html, body {
+    height: 100%;
+
 }
-.flex{
+
+.flex {
     display: flex;
 
 }
+
 /*header start*/
-header{
+header {
     justify-content: space-between;
     align-items: center;
-    padding:55px 52px;
+    padding: 55px 52px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    display: block;
+    width: 100%;
+
 
 }
 
-header nav ul{
+header .logo {
+    color: #ffffff;
+}
+
+header nav ul {
     margin-right: 81px;
 }
-header nav ul li{
-    padding: 0 30px ;
+
+header nav ul li {
+    padding: 0 25px;
 }
-header nav ul li a{
-   color: yellow;
+
+header nav ul li a {
+    color: #ffffff;
 }
-.social{
+
+.social {
     margin-right: 5px;
 
 }
-.social::after{
+
+.social::after {
     content: "";
     position: relative;
-    bottom:0;
+    bottom: 0;
     left: 2px;
     width: 2px;
     height: 18px;
     background: red;
 }
+
 /*header end*/
 /*content start*/
-.content{
-    position: absolute;
-    top: 0;
+.content {
     width: 100%;
     height: 100%;
-    z-index: -1;
+
 
 }
-.content div{
+
+.content div {
     height: 100%;
-    width : calc(110% / 4 );
-}
-.card{
+    width: calc(115% / 4);
 
 }
-.card1{
 
-    background: yellow;
+.card {
+    background-position: center center;
+    background-blend-mode: darken;
+    height: 100%;
+    position: relative;
+    color: #fff;
+
+
+}
+
+
+.card:before {
+    content: '';
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 80;
+    transition: all 320ms;
+
+
+}
+
+.card:hover:before {
+    background: rgba(0, 0, 0, 0);
+
+}
+
+
+.card div {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 99;
+    justify-content: center;
+    transition: all 320ms;
+
+
+}
+
+.card:hover div {
+    padding-bottom: 55px;
+
+}
+
+.card1 {
     clip-path: polygon(0% 0%, 100% 0%, 90.5% 100%, 0% 100%);
     width: 100%;
+}
+
+
+
+.card2 {
+    margin-left: -3%;
+
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+    width: 100%;
 
 }
 
-.card2{
 
-    margin-left:-40px;
-    background:lightblue;
-    clip-path: polygon(10.5% 0%, 100% 0%, 90.5% 100%, 0% 100%);
+.card3 {
+    margin-left: -3%;
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
     width: 100%;
 }
-.card3{
-    margin-left:-40px;
-    background:orange;
-    clip-path: polygon(10.5% 0%, 100% 0%, 90.5% 100%, 0% 100%);
-    width: 100%;
-}
-.card4{
-    margin-left:-40px;
-    background:blueviolet;
+
+
+.card4 {
+    margin-left: -3%;
+
     clip-path: polygon(10.5% 0%, 100% 0%, 100% 100%, 0% 100%);
     width: 100%;
 
