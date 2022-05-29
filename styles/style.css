@@ -37,10 +37,10 @@ header nav ul {
     display: flex;
 }
 
-header .logo a img {
-    width: 100%;
-    height: 50px;
+header .logo  {
+    width: 200px;
     z-index: 99;
+    display: block;
 }
 
 
@@ -178,7 +178,7 @@ header nav ul li .active {
     display: flex;
 }
 
-.content div {
+.content > div {
     height: 100%;
     width: 100%;
 }
@@ -187,6 +187,7 @@ header nav ul li .active {
     background-blend-mode: darken;
     height: 100%;
     position: relative;
+    overflow: hidden;
 }
 
 .card:before {
@@ -213,25 +214,32 @@ header nav ul li .active {
     right: 0;
     top: 0;
     bottom: 0;
-    width: 100%;
-    height: 100%;
+    /*width: 100%;*/
+    /*height: 100%;*/
     z-index: 999;
     color: white;
 }
 
 .heading {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    align-items: center;
     transition: all 320ms;
+    position: absolute;
+    top:calc(50% - 3vw);
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 90;
 
 }
 
 .card:hover .heading {
-    padding-bottom: 55px;
+top:calc(50% - 7vw);
 }
-
+video{
+    height: 100vh;
+}
 .card h1 {
     font-size: 60px;
 }
@@ -268,574 +276,21 @@ header nav ul li .active {
 }
 
 
-/* SLIDER */
 
-.slider {
-    overflow: hidden;
-    position: absolute;
-    left: 0;
-    top: 0;
+.owl-carousel .owl-stage {
+    display: flex;
 }
 
-
-.slider > ul {
+.owl-carousel .owl-item img {
+    width: auto;
     height: 100%;
-    z-index: 50;
 }
 
-.slider > ul > li {
+
+
+.video{
     height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-
-    opacity: 0;
-    z-index: 1;
-    -webkit-transition: all 2000ms ease;
-    -moz-transition: all 2000ms ease;
-    -ms-transition: all 2000ms ease;
-    -o-transition: all 2000ms ease;
-    transition: all 2000ms ease;
 }
-
-.slider img {
-    height: 100vh;
-}
-
-.slider > #input-slide-0:checked ~ ul > li.slide-0,
-.slider > #input-slide-1:checked ~ ul > li.slide-1,
-.slider > #input-slide-2:checked ~ ul > li.slide-2,
-.slider > #input-slide-3:checked ~ ul > li.slide-3 {
-    opacity: 1;
-    z-index: 2;
-}
-
-
-
-/* -------------------------------------------------------- arrow */
-.slider > .slider-arrow-prev,
-.slider > .slider-arrow-next {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    z-index: 50;
-}
-
-.slider > .slider-arrow-prev > label,
-.slider > .slider-arrow-next > label {
-    position: absolute;
-    width: 5vw;
-    height: 5vw;
-    margin-top: -2.5vw;
-    opacity: 0;
-    background-size: 100% auto;
-    background-position: center;
-
-    z-index: -1;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-.slider > #input-slide-0:checked ~ .slider-arrow-prev > label.slide-3,
-.slider > #input-slide-0:checked ~ .slider-arrow-next > label.slide-1,
-.slider > #input-slide-1:checked ~ .slider-arrow-prev > label.slide-0,
-.slider > #input-slide-1:checked ~ .slider-arrow-next > label.slide-2,
-.slider > #input-slide-2:checked ~ .slider-arrow-prev > label.slide-1,
-.slider > #input-slide-2:checked ~ .slider-arrow-next > label.slide-3,
-.slider > #input-slide-3:checked ~ .slider-arrow-prev > label.slide-2,
-.slider > #input-slide-3:checked ~ .slider-arrow-next > label.slide-0 {
-    z-index: 1;
-}
-
-.slider:hover > .slider-arrow-prev > label,
-.slider:hover > .slider-arrow-next > label {
-    opacity: 1;
-}
-
-.slider > .slider-arrow-prev > label {
-    left: 5vw;
-    background-image: url(http://panikaro.interiowo.pl/img/arrow-left.png);
-}
-
-.slider > .slider-arrow-next > label {
-    right: 5vw;
-    background-image: url(http://panikaro.interiowo.pl/img/arrow-right.png);
-}
-
-
-/* -------------------------------------------------------- description */
-.slider > .slide-description {
-    position: absolute;
-    width: 50%;
-}
-
-.slider > .slide-description > label {
-    position: absolute;
-    width: 100%;
-
-
-    z-index: 0;
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transition: all 0.75s ease;
-    -moz-transition: all 0.75s ease;
-    -ms-transition: all 0.75s ease;
-    -o-transition: all 0.75s ease;
-    transition: all 0.75s ease;
-}
-
-.slider > #input-slide-0:checked ~ .slide-description > .slide-0,
-.slider > #input-slide-1:checked ~ .slide-description > .slide-1,
-.slider > #input-slide-2:checked ~ .slide-description > .slide-2,
-.slider > #input-slide-3:checked ~ .slide-description > .slide-3 {
-    z-index: 2;
-    opacity: 1;
-    visibility: visible;
-}
-
-.slider > .slide-description > label > .text-slide {
-    margin: 0 auto;
-    line-height: 6vw;
-    text-align: center;
-}
-
-.slider > .slide-description > .slide-0 {
-    font-family: 'Raleway', sans-serif;
-}
-
-.slider > .slide-description > .slide-1 {
-    font-family: 'Poiret One', cursive;
-}
-
-.slider > .slide-description > .slide-2 {
-    font-family: 'Monoton', cursive;
-}
-
-.slider > .slide-description > .slide-3 {
-    font-family: 'Audiowide', cursive;
-}
-
-/* -------------------------------------------------------- autoplay */
-/*
-	if you don't want to autoplay
-  just check input "slide-0"
-  instead of input "play" in html code
-  and remove the code below
-*/
-/* -------------------------------------------------------- autoplay slide */
-@-webkit-keyframes slide {
-    0%, 100% {
-        opacity: 0;
-    }
-    6%, 25% {
-        opacity: 1;
-        z-index: 2;
-    }
-    30%, 50% {
-        opacity: 0;
-        z-index: 2;
-    }
-}
-
-@-moz-keyframes slide {
-    0%, 100% {
-        opacity: 0;
-    }
-    6%, 24% {
-        opacity: 1;
-        z-index: 2;
-    }
-    30%, 50% {
-        opacity: 0;
-        z-index: 2;
-    }
-}
-
-@-ms-keyframes slide {
-    0%, 100% {
-        opacity: 0;
-    }
-    6%, 25% {
-        opacity: 1;
-        z-index: 2;
-    }
-    30%, 50% {
-        opacity: 0;
-        z-index: 2;
-    }
-}
-
-@-o-keyframes slide {
-    0%, 100% {
-        opacity: 0;
-    }
-    6%, 25% {
-        opacity: 1;
-        z-index: 2;
-    }
-    30%, 50% {
-        opacity: 0;
-        z-index: 2;
-    }
-}
-
-@keyframes slide {
-    0%, 100% {
-        opacity: 0;
-    }
-    6%, 25% {
-        opacity: 1;
-        z-index: 2;
-    }
-    30%, 50% {
-        opacity: 0;
-        z-index: 2;
-    }
-}
-
-.slider > #input-slide-autoplay:checked ~ ul > li.slide-0 {
-    -webkit-animation: slide 32000ms infinite -2000ms linear;
-    -moz-animation: slide 32000ms infinite -2000ms linear;
-    -ms-animation: slide 32000ms infinite -2000ms linear;
-    -o-animation: slide 32000ms infinite -2000ms linear;
-    animation: slide 32000ms infinite -2000ms linear;
-}
-
-.slider > #input-slide-autoplay:checked ~ ul > li.slide-1 {
-    -webkit-animation: slide 32000ms infinite 6000ms linear;
-    -moz-animation: slide 32000ms infinite 6000ms linear;
-    -ms-animation: slide 32000ms infinite 6000ms linear;
-    -o-animation: slide 32000ms infinite 6000ms linear;
-    animation: slide 32000ms infinite 6000ms linear;
-}
-
-.slider > #input-slide-autoplay:checked ~ ul > li.slide-2 {
-    -webkit-animation: slide 32000ms infinite 14000ms linear;
-    -moz-animation: slide 32000ms infinite 14000ms linear;
-    -ms-animation: slide 32000ms infinite 14000ms linear;
-    -o-animation: slide 32000ms infinite 14000ms linear;
-    animation: slide 32000ms infinite 14000ms linear;
-}
-
-.slider > #input-slide-autoplay:checked ~ ul > li.slide-3 {
-    -webkit-animation: slide 32000ms infinite 22000ms linear;
-    -moz-animation: slide 32000ms infinite 22000ms linear;
-    -ms-animation: slide 32000ms infinite 22000ms linear;
-    -o-animation: slide 32000ms infinite 22000ms linear;
-    animation: slide 32000ms infinite 22000ms linear;
-}
-
-.slider > #input-slide-autoplay:checked ~ ul > li {
-    -webkit-transition: none;
-    -moz-transition: none;
-    -ms-transition: none;
-    -o-transition: none;
-    transition: none;
-}
-
-/* -------------------------------------------------------- autoplay arrow */
-@-webkit-keyframes arrow {
-    0%, 24% {
-        z-index: 1;
-    }
-    25%, 100% {
-        z-index: -1;
-    }
-}
-
-@-moz-keyframes arrow {
-    0%, 24% {
-        z-index: 1;
-    }
-    25%, 100% {
-        z-index: -1;
-    }
-}
-
-@-ms-keyframes arrow {
-    0%, 24% {
-        z-index: 1;
-    }
-    25%, 100% {
-        z-index: -1;
-    }
-}
-
-@-o-keyframes arrow {
-    0%, 24% {
-        z-index: 1;
-    }
-    25%, 100% {
-        z-index: -1;
-    }
-}
-
-@keyframes arrow {
-    0%, 24% {
-        z-index: 1;
-    }
-    25%, 100% {
-        z-index: -1;
-    }
-}
-
-.slider > #input-slide-autoplay:checked ~ .slider-arrow-prev > label.slide-3,
-.slider > #input-slide-autoplay:checked ~ .slider-arrow-next > label.slide-1 {
-    -webkit-animation: arrow 32000ms infinite -2000ms;
-    -moz-animation: arrow 32000ms infinite -2000ms;
-    -ms-animation: arrow 32000ms infinite -2000ms;
-    -o-animation: arrow 32000ms infinite -2000ms;
-    animation: arrow 32000ms infinite -2000ms;
-}
-
-.slider > #input-slide-autoplay:checked ~ .slider-arrow-prev > label.slide-0,
-.slider > #input-slide-autoplay:checked ~ .slider-arrow-next > label.slide-2 {
-    -webkit-animation: arrow 32000ms infinite 6000ms;
-    -moz-animation: arrow 32000ms infinite 6000ms;
-    -ms-animation: arrow 32000ms infinite 6000ms;
-    -o-animation: arrow 32000ms infinite 6000ms;
-    animation: arrow 32000ms infinite 6000ms;
-}
-
-.slider > #input-slide-autoplay:checked ~ .slider-arrow-prev > label.slide-1,
-.slider > #input-slide-autoplay:checked ~ .slider-arrow-next > label.slide-3 {
-    -webkit-animation: arrow 32000ms infinite 14000ms;
-    -moz-animation: arrow 32000ms infinite 14000ms;
-    -ms-animation: arrow 32000ms infinite 14000ms;
-    -o-animation: arrow 32000ms infinite 14000ms;
-    animation: arrow 32000ms infinite 14000ms;
-}
-
-.slider > #input-slide-autoplay:checked ~ .slider-arrow-prev > label.slide-2,
-.slider > #input-slide-autoplay:checked ~ .slider-arrow-next > label.slide-0 {
-    -webkit-animation: arrow 32000ms infinite 22000ms;
-    -moz-animation: arrow 32000ms infinite 22000ms;
-    -ms-animation: arrow 32000ms infinite 22000ms;
-    -o-animation: arrow 32000ms infinite 22000ms;
-    animation: arrow 32000ms infinite 22000ms;
-}
-
-/* -------------------------------------------------------- autoplay dot */
-@-webkit-keyframes dot {
-    0%, 24% {
-        background-color: #FD7FE3;
-    }
-    25%, 100% {
-        background: #FFF;
-    }
-}
-
-@-moz-keyframes dot {
-    0%, 24% {
-        background-color: #FD7FE3;
-    }
-    25%, 100% {
-        background: #FFF;
-    }
-}
-
-@-ms-keyframes dot {
-    0%, 24% {
-        background-color: #FD7FE3;
-    }
-    25%, 100% {
-        background: #FFF;
-    }
-}
-
-@-o-keyframes dot {
-    0%, 24% {
-        background-color: #FD7FE3;
-    }
-    25%, 100% {
-        background: #FFF;
-    }
-}
-
-@keyframes dot {
-    0%, 24% {
-        background-color: #FD7FE3;
-    }
-    25%, 100% {
-        background: #FFF;
-    }
-}
-
-.slider > #input-slide-autoplay:checked ~ .slider-dot > label.slide-0 {
-    -webkit-animation: dot 32000ms infinite -2000ms;
-    -moz-animation: dot 32000ms infinite -2000ms;
-    -ms-animation: dot 32000ms infinite -2000ms;
-    -o-animation: dot 32000ms infinite -2000ms;
-    animation: dot 32000ms infinite -2000ms;
-}
-
-.slider > #input-slide-autoplay:checked ~ .slider-dot > label.slide-1 {
-    -webkit-animation: dot 32000ms infinite 6000ms;
-    -moz-animation: dot 32000ms infinite 6000ms;
-    -ms-animation: dot 32000ms infinite 6000ms;
-    -o-animation: dot 32000ms infinite 6000ms;
-    animation: dot 32000ms infinite 6000ms;
-}
-
-.slider > #input-slide-autoplay:checked ~ .slider-dot > label.slide-2 {
-    -webkit-animation: dot 32000ms infinite 14000ms;
-    -moz-animation: dot 32000ms infinite 14000ms;
-    -ms-animation: dot 32000ms infinite 14000ms;
-    -o-animation: dot 32000ms infinite 14000ms;
-    animation: dot 32000ms infinite 14000ms;
-}
-
-.slider > #input-slide-autoplay:checked ~ .slider-dot > label.slide-3 {
-    -webkit-animation: dot 32000ms infinite 22000ms;
-    -moz-animation: dot 32000ms infinite 22000ms;
-    -ms-animation: dot 32000ms infinite 22000ms;
-    -o-animation: dot 32000ms infinite 22000ms;
-    animation: dot 32000ms infinite 22000ms;
-}
-
-/* -------------------------------------------------------- autoplay description */
-@-webkit-keyframes description {
-    0%, 5% {
-        opacity: 0;
-        z-index: 2;
-        visibility: visible;
-    }
-    6%, 24% {
-        opacity: 1;
-        z-index: 2;
-        visibility: visible;
-    }
-    25%, 100% {
-        opacity: 0;
-        z-index: 0;
-        visibility: hidden;
-    }
-}
-
-@-moz-keyframes description {
-    0%, 5% {
-        opacity: 0;
-        z-index: 2;
-        visibility: visible;
-    }
-    6%, 24% {
-        opacity: 1;
-        z-index: 2;
-        visibility: visible;
-    }
-    25%, 100% {
-        opacity: 0;
-        z-index: 0;
-        visibility: hidden;
-    }
-}
-
-@-ms-keyframes description {
-    0%, 5% {
-        opacity: 0;
-        z-index: 2;
-        visibility: visible;
-    }
-    6%, 24% {
-        opacity: 1;
-        z-index: 2;
-        visibility: visible;
-    }
-    25%, 100% {
-        opacity: 0;
-        z-index: 0;
-        visibility: hidden;
-    }
-}
-
-@-o-keyframes description {
-    0%, 5% {
-        opacity: 0;
-        z-index: 2;
-        visibility: visible;
-    }
-    6%, 24% {
-        opacity: 1;
-        z-index: 2;
-        visibility: visible;
-    }
-    25%, 100% {
-        opacity: 0;
-        z-index: 0;
-        visibility: hidden;
-    }
-}
-
-@keyframes description {
-    0%, 5% {
-        opacity: 0;
-        z-index: 2;
-        visibility: visible;
-    }
-    6%, 24% {
-        opacity: 1;
-        z-index: 2;
-        visibility: visible;
-    }
-    25%, 100% {
-        opacity: 0;
-        z-index: 0;
-        visibility: hidden;
-    }
-}
-
-.slider input {
-    display: none;
-}
-
-.slider > #input-slide-autoplay:checked ~ .slide-description > .slide-0 {
-    -webkit-animation: description 32000ms infinite -2000ms ease;
-    -moz-animation: description 32000ms infinite -2000ms ease;
-    -ms-animation: description 32000ms infinite -2000ms ease;
-    -o-animation: description 32000ms infinite -2000ms ease;
-    animation: description 32000ms infinite -2000ms ease;
-}
-
-.slider > #input-slide-autoplay:checked ~ .slide-description > .slide-1 {
-    -webkit-animation: description 32000ms infinite 6000ms ease;
-    -moz-animation: description 32000ms infinite 6000ms ease;
-    -ms-animation: description 32000ms infinite 6000ms ease;
-    -o-animation: description 32000ms infinite 6000ms ease;
-    animation: description 32000ms infinite 6000ms ease;
-}
-
-.slider > #input-slide-autoplay:checked ~ .slide-description > .slide-2 {
-    -webkit-animation: description 32000ms infinite 14000ms ease;
-    -moz-animation: description 32000ms infinite 14000ms ease;
-    -ms-animation: description 32000ms infinite 14000ms ease;
-    -o-animation: description 32000ms infinite 14000ms ease;
-    animation: description 32000ms infinite 14000ms ease;
-}
-
-.slider > #input-slide-autoplay:checked ~ .slide-description > .slide-3 {
-    -webkit-animation: description 32000ms infinite 22000ms ease;
-    -moz-animation: description 32000ms infinite 22000ms ease;
-    -ms-animation: description 32000ms infinite 22000ms ease;
-    -o-animation: description 32000ms infinite 22000ms ease;
-    animation: description 32000ms infinite 22000ms ease;
-}
-
-.slider > #input-slide-autoplay:checked ~ .slide-description > label {
-    -webkit-transition: none;
-    -moz-transition: none;
-    -ms-transition: none;
-    -o-transition: none;
-    transition: none;
-}
-
-.slide-description img {
-
-}
-
-/* SLIDER END */
 
 
 @media screen and (max-width: 992px) {
@@ -847,11 +302,11 @@ header nav ul li .active {
         display: block;
     }
 
-    .header .logo a {
+    .header .logo a{
+        width: 155px;
         position: absolute;
         left: 0;
         top: 0;
-        height: 50px;
         padding: 30px;
         z-index: 990;
     }
@@ -906,15 +361,15 @@ header nav ul li .active {
     }
 
     .content {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
 
     }
 
-    .content div {
-        width: 50%;
-        height: 50%;
-    }
+
 
     .card1 {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
@@ -936,19 +391,15 @@ header nav ul li .active {
         margin-left: 0;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 
+    }
+
+    .video{
+        height: auto;
     }
 }
 
 
 @media screen and (max-width: 700px) {
-    .content {
-        display: block;
-    }
-
-    .content div {
-        width: 100%;
-        height: 100%;
-    }
 
     .card1 {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
@@ -960,9 +411,19 @@ header nav ul li .active {
 
     }
 
-    .header .logo a {
-        height: 20px;
-        width: 190px;
+    .header .logo  {
+        width: 155px;
+    }
+    .card h1 {
+        font-size: 40px;
+    }
+
+    .card h2 {
+        font-size: 20px;
+    }
+
+    .card h3 {
+        font-size: 15px;
     }
 
     .card3 {
@@ -974,5 +435,9 @@ header nav ul li .active {
         margin-left: 0;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 
+    }
+
+    .video{
+        height: auto;
     }
 }
