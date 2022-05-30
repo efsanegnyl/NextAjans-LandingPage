@@ -295,7 +295,74 @@ video{
 .video{
     height: 100%;
 }
+@media screen and (max-width: 1300px)
+{
+    .header {
+        padding: 40px 20px;
+    }
 
+    .header .menu-icon {
+        display: block;
+    }
+
+    .header .logo a{
+        width: 155px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 30px;
+        z-index: 990;
+    }
+
+    .header nav {
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: -1000px;
+        left: 0;
+        padding: 30px 20px;
+        background: rgba(0, 0, 0, 0.7);
+        transition: all 320ms;
+    }
+
+    .header nav ul {
+        display: block;
+        margin-top: 90px;
+        margin-bottom: 8px;
+
+    }
+
+    .header nav ul li {
+        font-size: 26px;
+        padding: 10px;
+    }
+
+
+    .header .menu-btn:checked ~ nav {
+
+        top: 0;
+    }
+
+    .social {
+        margin-bottom: 15px;
+    }
+
+    .social::after {
+        display: none;
+    }
+
+    .social div img {
+        height: 26px;
+        padding-left: 18px;
+
+    }
+
+    .language div img {
+        height: 24px;
+        padding-left: 18px;
+
+    }
+}
 
 @media screen and (max-width: 1094px) {
     .header {
