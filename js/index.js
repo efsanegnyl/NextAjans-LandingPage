@@ -8,7 +8,9 @@ $(document).ready(function () {
         autoplayTimeout: 3000,
         autoplayHoverPause: true,
         lazyLoad: true,
-        autoHeight:true
+        autoHeight:true,
+        animateOut: 'fadeOut',
+        animateIn: 'fadeIn',
     });
 
     $(".slider2").owlCarousel({
@@ -18,7 +20,9 @@ $(document).ready(function () {
         autoplayTimeout: 3000,
         autoplayHoverPause: true,
         lazyLoad: true,
-        autoHeight:true
+        autoHeight:true,
+        animateOut: 'fadeOut',
+        animateIn: 'fadeIn',
     });
 
     $(".slider3").owlCarousel({
@@ -28,6 +32,8 @@ $(document).ready(function () {
         autoplayTimeout: 3000,
         autoplayHoverPause: true,
         lazyLoad: true,
-        autoHeight:true
+        autoHeight:true,
+        animateOut: 'fadeOut',
+        animateIn: 'fadeIn',
     });
 });

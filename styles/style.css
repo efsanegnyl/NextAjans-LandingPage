@@ -169,6 +169,10 @@ header nav ul li .active {
 .language div {
     margin-right: 10px;
 }
+.language img{
+    height: 18px;
+    
+}
 
 /*header end*/
 /*content start*/
