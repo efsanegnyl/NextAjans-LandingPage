@@ -171,7 +171,7 @@ header nav ul li .active {
 }
 .language img{
     height: 18px;
-    
+
 }
 
 /*header end*/
@@ -297,7 +297,7 @@ video{
 }
 
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1094px) {
     .header {
         padding: 40px 20px;
     }
