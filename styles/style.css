@@ -241,6 +241,15 @@ header nav ul li .active {
 .card:hover .heading {
 top:calc(50% - 7vw);
 }
+.nextAjans{
+    display: none;
+    color: white;
+    margin:12px;
+}
+.nextAjans a{
+    text-decoration: underline;
+    color: white;
+}
 video{
     height: 100vh;
 }
@@ -297,6 +306,11 @@ video{
 }
 @media screen and (max-width: 1300px)
 {
+    .nextAjans{
+        display: block;
+        color: white;
+        margin:12px;
+    }
     .header {
         padding: 40px 20px;
     }
@@ -359,6 +373,7 @@ video{
 
     .language div img {
         height: 24px;
+        width: 50px;
         padding-left: 18px;
 
     }
